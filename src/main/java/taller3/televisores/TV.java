@@ -7,13 +7,14 @@ public class TV {
 	private boolean estado;
 	private int volumen =1;
 	private Control control;
-	private static int numTV;
+	private static int numTV = 0;
 	
 
 	//Constructor
 	public TV(Marca marca, boolean estado) {
 		this.marca = marca;
 		this.estado = estado;
+		TV.numTV +=1;
 	}	
 	//Constructor
 	public TV (Marca marca, int canal, int precio, boolean estado, int volumen, Control control) {
@@ -26,11 +27,8 @@ public class TV {
 	}
 		
 	
-	//Methods for counting TV objects
-	public TV() {
-		numTV++;
-	}
-	public static int getNumeroTelevisores() {
+	//Method for counting TV objects
+	public static int getNumTV() {
 		return numTV;
 	}
 
@@ -123,5 +121,9 @@ public class TV {
 	public Marca getMarca() {
 		return marca;
 	}
+	
+	public static void setNumTV(int n) {
+		TV.numTV = n;
+	} 
 
 }
